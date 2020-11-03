@@ -10,6 +10,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define STRMACRO "1234567890"
+
 /* what is the equivalent value? */
 void equiv(char*, int);
 void equiv(char* msg, int i) { printf("%s = %d\n", msg, i); }
@@ -81,5 +83,12 @@ int main(void) {
     printf("sizeof(unsigned long long) = %d bytes (%d bits)\n", sizeof(ull),
            sizeof(ull) * 8);
     printf("\tULLONG_MAX = %d\n", ULLONG_MAX);
+
+    puts("");
+
+    printf("#define STRMACRO \"1234567890\" ... sizeof(STRMACRO)=%d\n",
+           sizeof(STRMACRO));
+    printf("#define STRMACRO \"1234567890\" ... strlen(STRMACRO)=%d\n",
+           strlen(STRMACRO));
 }
 
